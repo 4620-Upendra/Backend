@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Registration</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #2E8B57;
+        text-align: center;
+        margin-bottom: 30px; /* space between heading and form */
+    }
+
+    form {
+        background-color: #fff;
+        max-width: 400px;
+        margin: 0 auto; /* center form horizontally */
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    select option[value=""] {
+        color: #888;
+    }
+</style>
+
+<body>
+
+<h2>Student Registration</h2>
+
+<form action="StudentRegistrationServlet">
+
+   Name:<input type="text" name="name" autocomplete="off" placeholder="Enter your name"><br><br>
+   Email:<input type="email" name="email" autocomplete="off" placeholder="Enter your email"><br><br>
+   Age:<input type="number" name="age" placeholder="Enter your age"><br><br>
+   
+   <select name="course">
+      <option value="" disabled selected>Select Course</option>
+      <option value="Java">Java</option>
+      <option value="Web">Web</option>
+      <option value="Python">Python</option>
+   </select>
+   <br><br>
+   
+   <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>
