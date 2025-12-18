@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Student</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #2E8B57;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        background-color: #fff;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        width: 100%;
+        background-color: #2E8B57;
+        color: white;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #256b45;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transform: translateY(-2px);
+    }
+
+    .back-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Select Student by Email</h2>
+
+<form action="SelectStudent">
+
+    <label>Name</label>
+    <input type="text" name="name"
+           placeholder="Enter student name" autocomplete="off" required>
+
+    <input type="submit" value="Search Student">
+
+    <button type="button" class="back-btn"
+            onclick="location.href='MainStudent.html'">
+        Back to Main Page
+    </button>
+
+</form>
+
+</body>
+</html>

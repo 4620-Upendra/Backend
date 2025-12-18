@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smart Web-Based Student Record Management System</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #2E8B57;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Student Record Management System</h2>
+
+<div class="container">
+    <button onclick="location.href='Register.html'">Register Student</button>
+    <button onclick="location.href='UpdateStudent.html'">Update Email by Name</button>
+    <button onclick="location.href='DeleteStudent.html'">Delete Student by Name</button>
+    <form action="ViewAllStudent" method="get">
+    <button type="submit">View All Students</button>
+</form>
+    <button onclick="location.href='SelectStudent.html'">Select Student By Name</button>
+</div>
+
+</body>
+</html>

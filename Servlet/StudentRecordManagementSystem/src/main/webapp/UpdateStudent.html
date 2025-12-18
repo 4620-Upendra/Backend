@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Student</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #2E8B57;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+
+.back-btn {
+    width: 100%;
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Update Email</h2>
+
+<form action="UpdateStudentServlet">
+     Name:
+    <input type="text" placeholder="Enter student name"  autocomplete="off" name="name" required>
+    
+    New Email:
+    <input type="email" placeholder="Enter student New Email"  autocomplete="off" name="email" required>
+
+
+    <input type="submit" value="Update">
+
+    <button type="button" class="back-btn"
+            onclick="location.href='MainStudent.html'">
+        Back to Main Page
+    </button>
+</form>
+
+</body>
+</html>
