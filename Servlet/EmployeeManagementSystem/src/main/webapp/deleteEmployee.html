@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Employee</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 35px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .btn {
+            margin-top: 22px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #ff4d4d;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e60000;
+            transform: scale(1.03);
+        }
+
+        .warning {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #ffb3b3;
+        }
+
+        .back-link {
+            margin-top: 15px;
+        }
+
+        .back-link a {
+            color: #00c6ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Delete Employee</h2>
+
+    <form action="deleteEmployeeServlet" method="post">
+
+        <label>Employee ID</label>
+        <input type="number" name="empId" autocomplete="off" placeholder="Enter Employee ID" required>
+
+        <button type="submit" class="btn">Delete Employee</button>
+    </form>
+
+    <div class="warning">
+        ⚠ This action cannot be undone
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

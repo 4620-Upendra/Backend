@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 12px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #00c6ff;
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00a2d1;
+            color: white;
+            transform: scale(1.03);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Employee Management System</h1>
+
+    <button class="btn" onclick="location.href='registerEmployee.html'">
+        Register Employee
+    </button>
+
+    <button class="btn" onclick="location.href='updateEmployeeJob.html'">
+        Update Employee Job
+    </button>
+
+    <button class="btn" onclick="location.href='deleteEmployee.html'">
+        Delete Employee
+    </button>
+    
+   <form action="ViewAllEmployeesServlet" method="post">
+    <button type="submit" class="btn">
+        View All Employees
+    </button>
+</form>
+    
+
+    <button class="btn" onclick="location.href='selectEmployeeById.html'">
+        Select Employee By ID
+    </button>
+
+    <footer>
+        © 2025 Employee Management System | Developed by Upendra
+    </footer>
+</div>
+
+</body>
+</html>
