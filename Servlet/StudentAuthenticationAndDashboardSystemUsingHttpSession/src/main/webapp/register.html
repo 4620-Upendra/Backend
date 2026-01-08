@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(to right, #141e30, #243b55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-box {
+            width: 380px;
+            background: #1f2a40;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            color: white;
+        }
+
+        .register-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #00c6ff;
+            user-select: none;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 10px;
+            background: #00c6ff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+        }
+
+        .register-btn:hover {
+            background: #00a3cc;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .links a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById("password");
+            const text = document.getElementById("toggleText");
+
+            if (pwd.type === "password") {
+                pwd.type = "text";
+                text.innerText = "Hide";
+            } else {
+                pwd.type = "password";
+                text.innerText = "Show";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="register-box">
+        <h2>Student Registration</h2>
+
+        <form action="RegisterServlet" method="post">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" autocomplete="off" name="name" placeholder="Enter full name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" autocomplete="off" name="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="input-group password-box">
+                <label>Password</label>
+                <input type="password" name="password" id="password"
+                       placeholder="Create password" required>
+                <span class="password-toggle" id="toggleText"
+                      onclick="togglePassword()">Show</span>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" autocomplete="off" name="phone" placeholder="Enter phone number"
+                       pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Course</label>
+                <select name="course" required>
+                    <option value="">-- Select Course --</option>
+                    <option>Java Full Stack</option>
+                    <option>MERN Stack</option>
+                    <option>Python Full Stack</option>
+                    <option>Data Science</option>
+                </select>
+            </div>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+
+        <div class="links">
+            <p>Already registered? <a href="index.html">Login here</a></p>
+        </div>
+
+        <div class="footer">
+            © 2025 Student Registration System
+        </div>
+    </div>
+<script>
+
+fetch("RegisterMessageServlet", {
+    method: "POST"
+})
+.then(res => res.text())
+.then(msg => {
+    if (msg.trim() !== "") {
+        alert(msg);  
+    }
+});
+</script>
+
+</body>
+</html>
