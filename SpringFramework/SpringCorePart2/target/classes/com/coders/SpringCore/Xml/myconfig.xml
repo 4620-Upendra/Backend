@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+  <!-- <bean id="std" class="com.coders.SpringCore.First.Student"></bean> -->
+ <!-- spring object is created by using bean tag in that class=(path of class to create object) -->
+ 
+ 
+
+ <!-- scope of Bean:   i)singleton -->
+ <!-- <bean id="std" class="com.coders.SpringCore.First.Student" scope="singleton"></bean> -->
+ <!-- ii) prototype -->
+<!-- <bean id="std" class="com.coders.SpringCore.First.Student" scope="prototype"></bean>   -->
+
+
+
+
+<!-- constructor injection:used to pass argument to constructor in xml configuration in three ways and is done by using (constructor-arg tag)-->
+  <bean id="std" class="com.coders.SpringCore.First.Student" scope="prototype">
+  
+<!-- i) give direct values by constructor-arg tag and number of arguments should with no of parameter of constructor-->
+<!-- <constructor-arg value="101"></constructor-arg> -->
+<!-- <constructor-arg value="uppi"></constructor-arg> -->
+<!-- <constructor-arg value="101"></constructor-arg> -->
+<!-- <constructor-arg value="vizag"></constructor-arg> -->
+
+
+<!-- ii)giving values to parameters of constructor using index of parameters -->
+<!-- <constructor-arg index="0" value="20"></constructor-arg> -->
+<!-- <constructor-arg index="1" value="uppi"></constructor-arg> -->
+<!-- <constructor-arg index="3" value="kphb"></constructor-arg> -->
+<!-- <constructor-arg index="2" value="22"></constructor-arg> -->
+
+<!-- iii)giving values to parameters of constructor using direct names parameters -->
+
+<constructor-arg name="sid" value="20"></constructor-arg>
+<constructor-arg name="name" value="uppi"></constructor-arg>
+<constructor-arg name="age" value="22"></constructor-arg>
+<constructor-arg name="location" value="kphb"></constructor-arg>
+</bean> 
+  
+
+
+
+</beans>
+
