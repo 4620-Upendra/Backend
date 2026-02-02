@@ -6,15 +6,9 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">           
         <!-- bean definitions here -->                           <!-- this bean configuration copied from ( 40.2.2 the util schema) (in) >  40.2.2 the util schema(webiste in google) -->
 
-
-       <!-- topic:autowire -->
-       <!-- In Spring, autowire is used to automatically inject dependencies into a bean, so you don’t have to manually wire objects using <property> or <constructor-arg>. -->
-       <!-- in simple words: Spring itself connects one object to another for you.  -->
-       
-       
        <!--  creating bean without autowire -->
        <!--ref: used for passing object references to variable -->
-     <!--   <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype">
+       <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype">
        <constructor-arg name="id" value="20"></constructor-arg>
        <constructor-arg name="name" value="without autowire"></constructor-arg>
        <constructor-arg name="age" value="22"></constructor-arg>
@@ -24,14 +18,15 @@
        <bean id="loc" class="com.coders.SpringCorePart2.First.Location">
        <constructor-arg name="pin" value="1203"></constructor-arg>
        <constructor-arg name="city" value="vizag"></constructor-arg>
-       </bean>
-        -->
+       </bean> 
+
+       <!-- topic:autowire: Autowire allows Spring to automatically connect dependent objects while creating beans.    or  -->
+       <!-- In Spring, autowire is used to automatically inject dependencies into a bean, so you don’t have to manually wire objects using <property> or <constructor-arg>. -->
+       <!-- in simple words: Spring itself connects one object to another for you.  -->
         
-        
-        
-        <!-- creating bean with autowire :there are three ways-->
+        <!-- creating bean with autowire :there are three  ways-->
         <!-- i)byName autowire :  bean id should match with variable name in student class -->
-       <!-- <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype" autowire="byName">
+         <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype" autowire="byName">
        <constructor-arg name="id" value="20"></constructor-arg>
        <constructor-arg name="name" value="byName autowire"></constructor-arg>
        <constructor-arg name="age" value="22"></constructor-arg>
@@ -40,13 +35,13 @@
        <bean id="loc" class="com.coders.SpringCorePart2.First.Location">
        <constructor-arg name="pin" value="1203"></constructor-arg>
        <constructor-arg name="city" value="vizag"></constructor-arg>
-       </bean>
-        -->
+       </bean> 
+        
         
         
         
         <!-- ii)byType autowire:Spring searches for a single bean of that type and injects it automatically. -->
-       <!-- <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype" autowire="byType">
+         <bean id="std" class="com.coders.SpringCorePart2.First.Student" scope="prototype" autowire="byType">
        <constructor-arg name="id" value="20"></constructor-arg>
        <constructor-arg name="name" value="byType autowire"></constructor-arg>
        <constructor-arg name="age" value="22"></constructor-arg>
@@ -55,7 +50,7 @@
        <bean class="com.coders.SpringCorePart2.First.Location">
        <constructor-arg name="pin" value="1203"></constructor-arg>
        <constructor-arg name="city" value="vizag"></constructor-arg>
-       </bean>  -->
+       </bean> 
        
        
        
@@ -68,9 +63,14 @@
        <constructor-arg name="age" value="22"></constructor-arg>
        </bean>
        
-       <bean class="com.coders.SpringCorePart2.First.Location">
+       <bean class="com.coders.SpringCorePart2.First.Location" primary="true">
        <constructor-arg name="pin" value="1203"></constructor-arg>
        <constructor-arg name="city" value="vizag"></constructor-arg>
+       </bean>
+       
+       <bean class="com.coders.SpringCorePart2.First.Location" >
+       <constructor-arg name="pin" value="101"></constructor-arg>
+       <constructor-arg name="city" value="kphb"></constructor-arg>
        </bean>
         
 </beans>
