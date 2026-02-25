@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+	<persistence-unit name="SpringJPA">
+	
+	 <!-- Hibernate JPA Provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	
+	<class>Com.Coders.SpringJPA.Entity.Student</class>
+	 <class>Com.Coders.SpringJPA.OneToOneEntity.Student1</class>
+	 <class>Com.Coders.SpringJPA.OneToOneEntity.Laptop</class>
+	     <properties>
+
+            <!-- Database Connection -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/springjpa"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="8122003@Up"/>
+
+            <!-- Hibernate Dialect -->
+           <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+            <!-- Schema Generation -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>    <!-- here value=update means if table exists means update the table otherewise create it add data    and auto means generate quires by provider(hibernate)-->
+           <!--   <property name="hibernate.hbm2ddl.auto" value="create"/>  -->    <!-- here value=create means if table exists means drop it and create new table then update table otherewise create table -->
+
+            <!-- Show SQL -->
+         <property name="hibernate.show_sql" value="true"/>      <!--here value=true shows queries in console otherewise not shows -->
+            <property name="hibernate.format_sql" value="true"/>   <!-- here value=true gives queries in console in specific formate otherewise in single line -->
+
+        </properties>
+	
+	</persistence-unit>
+</persistence>
